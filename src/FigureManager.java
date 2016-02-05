@@ -46,19 +46,20 @@ public class FigureManager
 		HashMap<String, Double> sizeCats = new HashMap<>();
 		sizeCats.put("Klein", 0.0);
 		sizeCats.put("Mittel", 0.0);
-		sizeCats.put("Groﬂ", 0.0);
+		sizeCats.put("Gro√ü", 0.0);
 		double stor=0.0;
 		
 		for (Figure figure : figs) {
 			if (figure.getArea()<1000)
 			{
-				stor = sizeCats.get("Klein");
-				sizeCats.put("Klein", stor+figure.getArea());
+				stor = sizeCats.get("Klein"); // Setzen des bis jetzt ermittelten Werts in eine Store Variable 
+				sizeCats.put("Klein", stor+figure.getArea()); // Zur√ºckschreiben des Werts aus der Store Variable + dem aktuell ermittelten Wert. 
+				// sizeCat.put("Klein", sizeCats.get("Klein")+figure.getArea()); Die Einzeil√∂en Variante ohne Store Variable
 			}
 			else if (figure.getArea()>=5000)
 			{
-				stor = sizeCats.get("Groﬂ");
-				sizeCats.put("Groﬂ", stor+figure.getArea());
+				stor = sizeCats.get("Gro√ü");
+				sizeCats.put("Gro√ü", stor+figure.getArea());
 			}
 			else 
 			{
